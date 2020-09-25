@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.zut.dao.ContractDao">
+  
+  	<!-- 查询所有的contract -->
+  	<select id="findConAll" resultType="contract">
+  		select * from contract
+  	</select>
+  	
+  	<!-- 根据主键id查询contract -->
+  	<select id="findConById" parameterType="int" resultType="contract">
+  		select * from contract where id = #{id}
+  	</select>
+  	
+  	<!-- 根据主键id修改contract -->
+  	<update id="updateCon" parameterType="contract">
+  		update contract set
+  		c_no=#{c_no},
+  		c_createtime=#{c_createtime},
+  		c_taketime=#{c_taketime},
+  		c_overtime=#{c_overtime},
+  		c_rental=#{c_rental},
+  		c_cash=#{c_cash},
+  		c_name=#{c_name}
+  		where id = #{id}
+  	</update>
+  	
+  	<!-- 根据主键id删除contract -->
+  	<delete id="deleteCon" parameterType="int">
+  		delete from contract where id = #{id}
+  	</delete>
+  	
+  </mapper>

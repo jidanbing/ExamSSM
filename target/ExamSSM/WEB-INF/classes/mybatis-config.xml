@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<!-- mybatis设置 
+		lazyLoadingEnabled : 懒加载   默认值false   全局配置 
+		aggressiveLazyLoading  : 积极加载   默认值true   
+	-->
+	<settings>
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="aggressiveLazyLoading" value="false"/>
+	</settings>
+	
+	
+	<!-- 别名配置，常用于输入映射以及输出映射 -->
+	<typeAliases>
+		<!-- 基于包的别名配置    默认别名时类名首字母小写 -->
+		<package name="com.zut.pojo"/>
+	</typeAliases>
+
+</configuration>
